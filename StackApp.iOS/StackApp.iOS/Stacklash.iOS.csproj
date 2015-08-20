@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{020728C6-FA12-4B6E-9878-37B0373F6A23}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Stacklash.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>StackAppiOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n />
+    <MtouchArch>ARMv7</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>true</MtouchDebug>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IpaPackageName />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <BuildIpa>true</BuildIpa>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Components\json.net-4.5.11\lib\ios\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDWebImage">
+      <HintPath>..\Components\sdwebimage-3.3\lib\ios\SDWebImage.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+    <Folder Include="Resources\badges\" />
+    <Folder Include="Resources\google-code-prettify\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\SiteChooserController.cs" />
+    <Compile Include="Infrastructure\ImageDownloader.cs" />
+    <Compile Include="Infrastructure\NSUserDefaultsProxy.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Infrastructure\BclEx.cs" />
+    <Compile Include="Infrastructure\HttpUtility.cs" />
+    <Compile Include="Controllers\QuestionDetailsController.cs" />
+    <Compile Include="Infrastructure\ServiceProxy.cs" />
+    <Compile Include="Infrastructure\Alert.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Controllers\BadgesController.cs" />
+    <Compile Include="Controllers\TimelineController.cs" />
+    <Compile Include="Controllers\UserBioController.cs" />
+    <Compile Include="Controllers\WebBrowserController.cs" />
+    <Compile Include="Infrastructure\BTProgressHUD.cs" />
+    <Compile Include="Controllers\TopTagsForUserController.cs" />
+    <Compile Include="Controllers\SiteInfoController.cs" />
+    <Compile Include="Controllers\QuestionBodyController.cs" />
+    <Compile Include="Controllers\AnswerDetailsController.cs" />
+    <Compile Include="Infrastructure\KxMenu.cs" />
+    <Compile Include="Controllers\AnswersForUserController.cs" />
+    <Compile Include="Infrastructure\ViewDeckController.cs" />
+    <Compile Include="Controllers\LeftMenuController.cs" />
+    <Compile Include="Infrastructure\Nav.cs" />
+    <Compile Include="Views\AnswerListRow.cs" />
+    <Compile Include="Views\QuestionListRow.cs" />
+    <Compile Include="Views\WebViewRow.cs" />
+    <Compile Include="Views\CommentListRow.cs" />
+    <Compile Include="Views\TagLabel.cs" />
+    <Compile Include="Views\UserLabel.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NotificationsController.cs" />
+    <Compile Include="Controllers\InboxController.cs" />
+    <Compile Include="Views\InboxRow.cs" />
+    <Compile Include="Controllers\ModeratorsController.cs" />
+    <Compile Include="Controllers\UserMentionsController.cs" />
+    <Compile Include="Infrastructure\ImageResizer.cs" />
+    <Compile Include="Infrastructure\ContentRows.cs" />
+    <Compile Include="Infrastructure\RichListController.cs" />
+    <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Infrastructure\MailSender.cs" />
+    <Compile Include="Controllers\StackBaseListController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Infrastructure\IOS.cs" />
+    <Compile Include="Infrastructure\Database.cs" />
+    <Compile Include="Infrastructure\SQLite.cs" />
+    <Compile Include="Infrastructure\SQLiteAsync.cs" />
+    <Compile Include="Controllers\HIstoryController.cs" />
+    <Compile Include="Views\UserListRow.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <XamarinComponentReference Include="json.net">
+      <InstallationInProgress>False</InstallationInProgress>
+      <Version>4.5.11</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="sdwebimage">
+      <InstallationInProgress>False</InstallationInProgress>
+      <Version>3.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\icon_ipad.png" />
+    <BundleResource Include="Resources\icon_ipadretina.png" />
+    <BundleResource Include="Resources\icon_retina.png" />
+    <BundleResource Include="Resources\icon.png" />
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\forward.png" />
+    <BundleResource Include="Resources\three-line-menu.png" />
+    <BundleResource Include="Resources\badges\bronze.png" />
+    <BundleResource Include="Resources\badges\gold.png" />
+    <BundleResource Include="Resources\badges\silver.png" />
+    <BundleResource Include="Resources\noimage.png" />
+    <BundleResource Include="Resources\google-code-prettify\lang-apollo.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-basic.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-clj.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-css.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-dart.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-erlang.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-go.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-hs.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-lisp.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-llvm.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-lua.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-matlab.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-ml.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-mumps.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-n.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-pascal.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-proto.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-r.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-rd.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-scala.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-sql.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-tcl.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-tex.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-vb.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-vhdl.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-wiki.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-xq.js" />
+    <BundleResource Include="Resources\google-code-prettify\lang-yaml.js" />
+    <BundleResource Include="Resources\google-code-prettify\prettify.css" />
+    <BundleResource Include="Resources\google-code-prettify\prettify.js" />
+    <BundleResource Include="Resources\google-code-prettify\run_prettify.js" />
+    <BundleResource Include="Resources\tick2.png" />
+  </ItemGroup>
+</Project>
